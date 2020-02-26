@@ -1,0 +1,2 @@
+rootProject.name='Android2Flutter'
+include ':app'
