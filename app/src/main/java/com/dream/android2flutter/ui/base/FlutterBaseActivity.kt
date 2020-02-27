@@ -26,7 +26,7 @@ class FlutterBaseActivity : FlutterFragmentActivity() {
         fun startCurrentActivity(context: Context, initRoute: String) {
             //配置启动Intent
             val intent = Intent(context, FlutterBaseActivity::class.java)
-            intent.action = "android.intent.action.RUN"
+            intent.action = "android.intent.action.RUN"//这个就是走flutter的关键
             intent.putExtra("route", initRoute)
             context.startActivity(intent)
         }
