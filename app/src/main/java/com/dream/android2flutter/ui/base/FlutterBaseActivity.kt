@@ -2,9 +2,9 @@ package com.dream.android2flutter.ui.base
 
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.android.FlutterSurfaceView
+import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
 
 /**
@@ -31,14 +31,18 @@ class FlutterBaseActivity : FlutterActivity() {
         }
     }
 
-    override fun onFlutterSurfaceViewCreated(flutterSurfaceView: FlutterSurfaceView) {
-        super.onFlutterSurfaceViewCreated(flutterSurfaceView)
-        registerMethod();
+    override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
+        super.configureFlutterEngine(flutterEngine)
+        registerMethod(flutterEngine)
     }
 
-    private fun registerMethod() {
+    override fun onFlutterSurfaceViewCreated(flutterSurfaceView: FlutterSurfaceView) {
+        super.onFlutterSurfaceViewCreated(flutterSurfaceView)
+    }
+
+    private fun registerMethod(flutterEngine: FlutterEngine) {
         MethodChannel(
-            flutterEngine?.dartExecutor,
+            flutterEngine.dartExecutor,
             CHANNEL
         ).setMethodCallHandler { methodCall, result ->
             if (methodCall.method == "getAcivityResult") {
