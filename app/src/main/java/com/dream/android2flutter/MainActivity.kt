@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.dream.android2flutter.ui.base.FlutterBaseActivity
+import io.flutter.plugins.GeneratedPluginRegistrant
 
 
 class MainActivity : AppCompatActivity() {
@@ -11,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         findViewById<TextView>(R.id.tv_btn).setOnClickListener {
             FlutterBaseActivity.startCurrentActivity(this@MainActivity,"home")
          }
