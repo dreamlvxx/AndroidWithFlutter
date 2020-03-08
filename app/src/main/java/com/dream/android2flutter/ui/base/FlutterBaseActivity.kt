@@ -19,7 +19,7 @@ import io.flutter.plugin.common.MethodChannel
  * @UpdateDate:     2020/2/25 5:23 PM
  */
 class FlutterBaseActivity : FlutterActivity() {
-    val CHANNEL = "sample.flutter.io/test"
+    val CHANNEL = "com.method.getresult"
 
     companion object {
         fun startCurrentActivity(context: Context, initRoute: String) {
@@ -45,8 +45,8 @@ class FlutterBaseActivity : FlutterActivity() {
             flutterEngine.dartExecutor,
             CHANNEL
         ).setMethodCallHandler { methodCall, result ->
-            if (methodCall.method == "getAcivityResult") {
-                result.success("success wocao le ") //回调给flutter的参数
+            if (methodCall.method == "getResult") {
+                result.success("return result xxx '' to flutter") //回调给flutter的参数
             }
         }
     }
