@@ -1,4 +1,4 @@
-package com.dream.android2flutter.flutter_channel.method_handler;
+package com.dream.android2flutter.flutter.flutter_channel.method_handler;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;

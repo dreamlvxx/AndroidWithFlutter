@@ -3,8 +3,7 @@ package com.dream.android2flutter
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.dream.android2flutter.ui.base.FlutterBaseActivity
-import io.flutter.plugins.GeneratedPluginRegistrant
+import com.dream.android2flutter.flutter.FlutterWrapperActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         findViewById<TextView>(R.id.tv_btn).setOnClickListener {
-            FlutterBaseActivity.startCurrentActivity(this@MainActivity,"home")
+            FlutterWrapperActivity.startCurrentActivity(this@MainActivity,"home")
          }
     }
 }

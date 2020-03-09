@@ -1,4 +1,4 @@
-package com.dream.android2flutter.flutter_channel;
+package com.dream.android2flutter.flutter.flutter_channel;
 
 /**
  * @ProjectName: Android2Flutter

@@ -1,4 +1,4 @@
-package com.dream.android2flutter.flutter_channel
+package com.dream.android2flutter.flutter.flutter_channel
 
 import io.flutter.plugin.common.MethodChannel
 import java.util.*
@@ -6,7 +6,7 @@ import java.util.*
 /**
  *
  * @ProjectName:    Android2Flutter
- * @Package:        com.dream.android2flutter.flutter_channel
+ * @Package:        com.dream.android2flutter.flutter.flutter_channel
  * @ClassName:      MethodChannelManager
  * @Description:
  * @Author:         xingxinglv

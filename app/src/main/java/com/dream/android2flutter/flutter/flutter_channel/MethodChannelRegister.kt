@@ -1,4 +1,4 @@
-package com.dream.android2flutter.flutter_channel
+package com.dream.android2flutter.flutter.flutter_channel
 
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
@@ -7,7 +7,7 @@ import io.flutter.view.FlutterNativeView
 /**
  *
  * @ProjectName:    Android2Flutter
- * @Package:        com.dream.android2flutter.flutter_channel
+ * @Package:        com.dream.android2flutter.flutter.flutter_channel
  * @ClassName:      MethodManager
  * @Description:
  * @Author:         xingxinglv
