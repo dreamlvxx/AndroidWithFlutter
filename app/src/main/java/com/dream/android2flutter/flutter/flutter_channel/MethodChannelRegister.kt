@@ -1,8 +1,8 @@
 package com.dream.android2flutter.flutter.flutter_channel
 
+import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
-import io.flutter.view.FlutterNativeView
 
 /**
  *
@@ -16,13 +16,13 @@ import io.flutter.view.FlutterNativeView
  * @UpdateDate:     2020/2/26 3:43 PM
  */
 
-class MethodChannelRegister(engine: FlutterNativeView) {
+class MethodChannelRegister(engine: FlutterEngine) {
 
-    private val engine: FlutterNativeView = engine
+    private val engine: FlutterEngine = engine
     private val manager : MethodChannelManager = MethodChannelManager
 
     fun register(name: String?, handler: MethodCallHandler?): MethodChannel {
-        val channel = MethodChannel(engine, name)
+        val channel = MethodChannel(engine.dartExecutor, name)
         channel.setMethodCallHandler(handler)
         manager.put(name, channel)
         return channel
