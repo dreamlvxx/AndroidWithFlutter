@@ -2,11 +2,12 @@ package com.dream.android2flutter.flutter
 
 import android.content.Context
 import android.content.Intent
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
 import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.android.FlutterSurfaceView
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
+import io.flutter.plugins.GeneratedPluginRegistrant
+
 
 /**
  *
@@ -32,14 +33,21 @@ class FlutterWrapperActivity : FlutterActivity() {
         }
     }
 
-    override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
-        super.configureFlutterEngine(flutterEngine)
-        registerMethod(flutterEngine)
-        var s : ViewModel? = null;
-        var da : LiveData<String>?  = null;
-
+    override fun onFlutterSurfaceViewCreated(flutterSurfaceView: FlutterSurfaceView) {
+        super.onFlutterSurfaceViewCreated(flutterSurfaceView)
     }
 
+    override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
+        GeneratedPluginRegistrant.registerWith(flutterEngine);
+        super.configureFlutterEngine(flutterEngine)
+        registerMethod(flutterEngine)
+
+        //TODO 这里有错误
+
+//        flutterEngine.platformViewsController.registry
+//            .registerViewFactory("sampleView",SampleViewFactory(flutterEngine.dartExecutor.binaryMessenger))
+//
+    }
 
     private fun registerMethod(flutterEngine: FlutterEngine) {
         MethodChannel(

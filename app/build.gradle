@@ -2,16 +2,18 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+print("app gradle start========")
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
 
     defaultConfig {
-        applicationId "com.dream.android2flutter"
-        minSdkVersion 21
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        applicationId rootProject.baseConfigVersion.applicationId
+        minSdkVersion rootProject.baseConfigVersion.minSdkVersion
+        targetSdkVersion rootProject.baseConfigVersion.targetSdkVersion
+        versionCode rootProject.baseConfigVersion.version_code
+        versionName rootProject.baseConfigVersion.version_name
+
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -47,7 +49,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation rootProject.baseConfigVersion.constraintlayout_Version
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'

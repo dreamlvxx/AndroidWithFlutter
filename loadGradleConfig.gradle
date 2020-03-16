@@ -1,0 +1,39 @@
+/**
+ * 加载配置文件
+ */
+loadProjectConfig()
+
+def loadProjectConfig() {
+    /** 读取配置文件 */
+    String separator = System.getProperty("file.separator")
+    Properties properties = new Properties()
+    File projectProperties = new File(rootDir.getAbsolutePath()+separator+"project.properties")
+    properties.load(projectProperties.newDataInputStream())
+
+    /**
+     * rootProject.gradle.ext
+     * 因为gradle对象先于project对象实例化,所以不能在project创建之前使用rootProject.gradle
+     */
+//    gradle.ext.keyPath = config.get("keyPath")
+//    gradle.ext.debugKeystore = config.get("keyPath")
+//    gradle.ext.releaseKeystore = config.get("keyPath")
+//    gradle.ext.keyAlias = config.get("keyAlias")
+//    gradle.ext.keyPassword = config.get("keyPassword")
+//    gradle.ext.storePassword = config.get("storePassword")
+
+    gradle.ext.gradletoolsversion = properties.get("gradleToolsVersion")
+    gradle.ext.compileSdkVersion = properties.get("compileSdkVersion")
+    gradle.ext.buildToolsVersion = properties.get("buildToolsVersion")
+    gradle.ext.minSdkVersion = properties.get("minSdkVersion")
+    gradle.ext.ttt = properties.get("targetSdkVersion")
+
+//    gradle.ext.applicationId = config.get("applicationId")
+//    gradle.ext.server_host = config.get("server_host")
+//    gradle.ext.versionCode = config.get("versionCode")
+//    gradle.ext.versionName = config.get("versionName")
+//    gradle.ext.minifyEnabled = config.get("minifyEnabled")
+//    gradle.ext.shrinkResources = config.get("shrinkResources")
+//    gradle.ext.zipAlignEnabled = config.get("zipAlignEnabled")
+//    gradle.ext.debuggable = config.get("debuggable")
+
+}

@@ -1,2 +1,13 @@
+print("\nsettings.gradle start======")
 rootProject.name='Android2Flutter'
+
+print("\nloadGradleConfig.gradle start======")
+apply from:"./loadGradleConfig.gradle"
+print("\nloadGradleConfig.gradle finish======")
+
+print("\ninclude start======")
 include ':app'
+print("\ninclude finish======")
+
+print("\nsettings.gradle finish======")
+
